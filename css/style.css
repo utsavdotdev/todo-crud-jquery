@@ -13,7 +13,6 @@
   --border: #ececec;
 }
 
-
 body {
   font-family: "Inter", sans-serif;
   background-color: var(--bg-color);
@@ -23,4 +22,82 @@ body {
   padding-top: 12vh;
   margin: 0;
   -webkit-font-smoothing: antialiased;
+}
+
+
+:root {
+    --bg-color: #fbfbfb;
+    --text-main: #2d2e32;
+    --text-muted: #949494;
+    --accent: #000000;
+    --card-bg: #ffffff;
+    --border: #ececec;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    padding-top: 12vh;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 0 20px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 24px;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+    text-decoration: underline;
+}
+
+.input-wrapper {
+    display: flex;
+    background: var(--card-bg);
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    border: 1px solid var(--border);
+    margin-bottom: 32px;
+    transition: box-shadow 0.3s ease;
+}
+
+.input-wrapper:focus-within {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    border-color: #ddd;
+}
+
+input[type="text"] {
+    flex: 1;
+    border: none;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    outline: none;
+    background: transparent;
+    color: var(--text-main);
+}
+
+button#action-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+button#action-btn:hover {
+    opacity: 0.8;
 }
