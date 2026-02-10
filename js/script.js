@@ -1,5 +1,6 @@
 $(document).ready(function () {
   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  let editIndex = null;
 
   const $input = $("#todo-input");
   const $button = $("#action-btn");
@@ -24,7 +25,13 @@ $(document).ready(function () {
   $button.on("click", function () {
     const val = $input.val().trim();
     if (!val) return;
-    tasks.push({ text: val, completed: false });
+    if (editIndex != null) {
+      tasks[editIndex].text = val;
+      editIndex = null;
+      $button.text("Add");
+    } else {
+      tasks.push({ text: val, completed: false });
+    }
     $input.val("");
     renderTasks();
   });
@@ -42,11 +49,20 @@ $(document).ready(function () {
     renderTasks();
   });
 
-  $list.on('click','.delete-trigger',function(){
-    const index = $(this).data('index');
-    tasks.splice(index,1)
+  $list.on("click", ".delete-trigger", function () {
+    const index = $(this).data("index");
+    tasks.splice(index, 1);
     renderTasks();
-  })
+  });
+
+  $list.on("click", ".edit-trigger", function () {
+    const index = $(this).data("index");
+    editIndex = index;
+
+    $input.val(tasks[index].text);
+    $button.text("Update");
+    $input.focus();
+  });
 
   renderTasks();
 });
