@@ -101,3 +101,88 @@ button#action-btn {
 button#action-btn:hover {
     opacity: 0.8;
 }
+
+
+.input-wrapper {
+    display: flex;
+    background: var(--card-bg);
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    border: 1px solid var(--border);
+    margin-bottom: 32px;
+    transition: box-shadow 0.3s ease;
+}
+
+.input-wrapper:focus-within {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    border-color: #ddd;
+}
+
+input[type="text"] {
+    flex: 1;
+    border: none;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    outline: none;
+    background: transparent;
+    color: var(--text-main);
+}
+
+button#action-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+button#action-btn:hover {
+    opacity: 0.8;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    transition: all 0.2s ease;
+}
+
+.task-content {
+    flex: 1;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.task-content.completed {
+    color: var(--text-muted);
+    text-decoration: line-through;
+}
+
+.controls {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-subtle {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-subtle:hover {
+    color: var(--text-main);
+}
