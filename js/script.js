@@ -42,5 +42,11 @@ $(document).ready(function () {
     renderTasks();
   });
 
+  $list.on('click','.delete-trigger',function(){
+    const index = $(this).data('index');
+    tasks.splice(index,1)
+    renderTasks();
+  })
+
   renderTasks();
 });
